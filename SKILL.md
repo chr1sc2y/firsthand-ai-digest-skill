@@ -17,7 +17,8 @@ Use this skill to turn Firsthand AI Digest into a repeatable AI daily brief. The
 1. For scheduled runs, create a Codex automation with the prompt in `references/automation_prompt.md`.
 2. For one-time runs, execute `scripts/run_once.py` to generate a source pack, then inspect only the highest-value original sources.
 3. Use Firsthand AI Digest summaries as the fast scan layer; open original sources when a top story needs verification or context.
-4. Clearly mark inaccessible, login-gated, deleted, paywalled, or anti-bot-limited sources.
+4. Use `templates/brief.html` as the fixed HTML template when creating the final brief. Replace placeholders; do not redesign the page unless asked.
+5. Clearly mark inaccessible, login-gated, deleted, paywalled, or anti-bot-limited sources.
 
 ## Create The Automation
 
@@ -86,7 +87,7 @@ Include:
 
 Target 800-1200 words, hard maximum 1500 words unless the user explicitly asks for a deep dive. Use emoji freely and naturally; do not restrict the emoji set. Use visual signposts such as cards, badges, priority labels, compact tables, timeline strips, or callout boxes. Avoid long per-item confidence/impact/follow-up blocks.
 
-For HTML output, keep the page simple and self-contained with inline CSS. Use a clean responsive layout, readable type, generous spacing, and visual priority from most important to least important. Use `Firsthand AI Digest` as the page title. Keep the header compact so attention flows quickly to TL;DR and top stories. Render top-story cards as one row each by default; two-column cards can feel noisy for news scanning. Do not use external JS or a build step.
+For HTML output, copy `templates/brief.html` and replace its `{{PLACEHOLDER}}` blocks. Keep the CSS, layout, class names, spacing, and overall structure stable so every daily brief has the same recognizable style. Use `Firsthand AI Digest` as the page title. Keep the header compact so attention flows quickly to TL;DR and top stories. Render top-story cards as one row each by default; two-column cards can feel noisy for news scanning. Do not use external JS or a build step.
 
 ## Source Handling Rules
 

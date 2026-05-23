@@ -14,6 +14,7 @@ Use this repository to run a daily Firsthand AI Digest workflow from <https://ai
 - Prefer a self-contained HTML file named `firsthand-ai-digest-brief.html`; use Markdown only if HTML/file output is unavailable.
 - Optimize for a 3-5 minute read, not a comprehensive research report.
 - Use emoji freely, compact bullets, one-row story cards, badges, tables, callouts, or other lightweight visual structures. For top stories, prefer `Source`, `Signal`, and `Potential impact`.
+- Use `templates/brief.html` as the fixed HTML template when available. Replace placeholders and keep the CSS/layout stable.
 - Use ai.prov1dence.top as an index, not as the only source.
 - Follow only high-value or ambiguous items into original sources: blogs, papers, product announcements, videos, podcasts, and X posts or threads.
 - Mark inaccessible sources clearly, including login gates, paywalls, anti-bot failures, deleted posts, and missing transcripts.

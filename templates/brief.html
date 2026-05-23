@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Firsthand AI Digest</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --ink: #172033;
+      --muted: #667085;
+      --panel: #ffffff;
+      --line: #e3e8ef;
+      --green: #0f766e;
+      --blue: #2563eb;
+      --purple: #7c3aed;
+      --red: #dc2626;
+      --amber: #b45309;
+      --soft-green: #eaf7f4;
+      --soft-blue: #eef5ff;
+      --soft-purple: #f4f0ff;
+      --shadow: 0 12px 34px rgba(23, 32, 51, .08);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(37,99,235,.12), transparent 34rem),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 36%);
+      color: var(--ink);
+      font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    a { color: var(--blue); text-decoration: none; font-weight: 700; }
+    a:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .page { max-width: 1180px; margin: 0 auto; padding: 28px 18px 44px; }
+    .panel {
+      background: rgba(255,255,255,.9);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 18px 20px;
+    }
+    .eyebrow { color: var(--green); font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 12px; }
+    h1 { margin: 4px 0 6px; font-size: clamp(28px, 4vw, 40px); line-height: 1; letter-spacing: -.02em; }
+    .subtitle { margin: 0; color: var(--muted); max-width: 760px; font-size: 15px; }
+    .scoreboard { display: flex; gap: 8px; }
+    .score {
+      min-width: 94px;
+      border-radius: 13px;
+      padding: 10px 12px;
+      background: var(--soft-blue);
+      border: 1px solid #d7e7ff;
+    }
+    .score:nth-child(2) { background: var(--soft-green); border-color: #cbe8e1; }
+    .score:nth-child(3) { background: var(--soft-purple); border-color: #e5ddff; }
+    .score b { display: block; font-size: 18px; line-height: 1.1; }
+    .score span { color: var(--muted); font-size: 12px; font-weight: 750; text-transform: uppercase; letter-spacing: .05em; }
+    h2 { margin: 30px 0 13px; font-size: 23px; letter-spacing: -.01em; }
+    .tldr {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .tile {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 15px;
+      min-height: 116px;
+    }
+    .tile strong { display: block; font-size: 16px; margin-bottom: 6px; }
+    .tile p { margin: 0; color: var(--muted); }
+    .cards { display: grid; grid-template-columns: 1fr; gap: 13px; }
+    .story {
+      position: relative;
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 17px 18px 16px;
+      box-shadow: 0 8px 24px rgba(23, 32, 51, .05);
+    }
+    .story::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 5px;
+      background: var(--blue);
+    }
+    .story.security::before { background: var(--red); }
+    .story.infra::before { background: var(--amber); }
+    .story.research::before { background: var(--purple); }
+    .story.product::before { background: var(--green); }
+    .rank {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .badge {
+      display: inline-flex;
+      margin-left: 8px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .story-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 12px;
+      align-items: start;
+    }
+    h3 { margin: 10px 0 8px; font-size: 19px; line-height: 1.22; }
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.25fr;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .meta {
+      background: #f8fafc;
+      border: 1px solid #e6ebf2;
+      border-radius: 12px;
+      padding: 11px 12px;
+    }
+    .meta b {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 4px;
+    }
+    .source-link {
+      white-space: nowrap;
+      align-self: start;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 11px;
+      background: #fff;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 14px;
+    }
+    .box {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 17px 19px;
+    }
+    ul { margin: 0; padding-left: 21px; }
+    li + li { margin-top: 8px; }
+    .noted {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .note {
+      border: 1px solid var(--line);
+      border-radius: 13px;
+      background: #fff;
+      padding: 13px;
+    }
+    .note b { display: block; margin-bottom: 5px; }
+    footer { color: var(--muted); font-size: 13px; margin-top: 26px; }
+    @media (max-width: 880px) {
+      .hero, .split, .cards, .tldr, .noted, .meta-grid, .story-head { grid-template-columns: 1fr; }
+      .scoreboard { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .source-link { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel hero">
+      <div>
+        <div class="eyebrow">Generated from Firsthand AI Digest · {{DATE}}</div>
+        <h1>⚡ Firsthand AI Digest</h1>
+        <p class="subtitle">{{SUMMARY_SENTENCE}}</p>
+      </div>
+      <aside class="scoreboard" aria-label="Brief stats">
+        <div class="score"><span>Window</span><b>{{WINDOW_LABEL}}</b></div>
+        <div class="score"><span>Items</span><b>{{ITEM_COUNT}}</b></div>
+        <div class="score"><span>Read</span><b>{{READ_TIME}}</b></div>
+      </aside>
+    </section>
+
+    <h2>🧭 TL;DR</h2>
+    <section class="tldr">
+      {{TLDR_CARDS}}
+    </section>
+
+    <h2>🔥 Top Stories</h2>
+    <section class="cards">
+      {{TOP_STORY_CARDS}}
+    </section>
+
+    <h2>🧩 Pattern I’m Seeing</h2>
+    <section class="split">
+      <div class="box">
+        <h3>Today’s shape</h3>
+        <ul>
+          {{TODAYS_SHAPE_ITEMS}}
+        </ul>
+      </div>
+      <div class="box">
+        <h3>Signal quality</h3>
+        <ul>
+          {{SIGNAL_QUALITY_ITEMS}}
+        </ul>
+      </div>
+    </section>
+
+    <h2>👀 Also Noted</h2>
+    <section class="noted">
+      {{ALSO_NOTED_CARDS}}
+    </section>
+
+    <h2>✅ What To Watch Next</h2>
+    <section class="box">
+      <ul>
+        {{WATCH_NEXT_ITEMS}}
+      </ul>
+    </section>
+
+    <footer>
+      Indexed from <a href="https://ai.prov1dence.top/">Firsthand AI Digest</a>. This brief may use Digest metadata for access-limited platforms such as X, YouTube, and podcast hosts unless a source was directly fetchable.
+    </footer>
+  </main>
+</body>
+</html>

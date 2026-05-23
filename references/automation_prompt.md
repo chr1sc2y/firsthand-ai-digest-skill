@@ -2,7 +2,7 @@ Every time the task runs, collect AI news items from Firsthand AI Digest at http
 
 Produce a short English daily brief, not a long research report. The goal is that a busy reader can understand what happened in 3-5 minutes.
 
-Default output: create a self-contained HTML file named `firsthand-ai-digest-brief.html`. If the runtime cannot write files, output the same brief in Markdown.
+Default output: create a self-contained HTML file named `firsthand-ai-digest-brief.html`. If `templates/brief.html` is available, copy it and replace the `{{PLACEHOLDER}}` blocks with the current day's content. Keep the CSS, class names, layout, spacing, and overall visual style stable. If the runtime cannot write files, output the same brief in Markdown.
 
 Collection rules:
 
@@ -22,21 +22,22 @@ Brief requirements:
 6. Attach links to factual claims, but avoid citation clutter. One link per item is usually enough.
 7. Separate facts from interpretation, but keep the wording lightweight.
 
-HTML design requirements:
+HTML template requirements:
 
-1. Make a single self-contained HTML file with inline CSS and no build step.
-2. Use a clean, simple visual style: readable type, generous spacing, responsive layout, and a restrained palette.
-3. Keep the header compact. The title should be `Firsthand AI Digest`, with a short one-line summary and small stats for window, items scanned, and read time. Do not let the hero/header dominate the page.
-4. Use visual priority from most important to least important:
+1. Prefer `templates/brief.html` from this repo. Treat it as the canonical design.
+2. Make a single self-contained HTML file with inline CSS and no build step.
+3. Keep the screenshot-like visual style: compact header, light background, rounded white cards, subtle borders, TL;DR tiles, one-row top-story cards, and simple lower-priority sections.
+4. Keep the header compact. The title should be `Firsthand AI Digest`, with a short one-line summary and small stats for window, items scanned, and read time. Do not let the hero/header dominate the page.
+5. Use visual priority from most important to least important:
    - Hero/header summary
    - TL;DR
    - Top story cards
    - Pattern/trend section
    - Also Noted
    - Watch Next
-5. Avoid giant walls of text. Story cards should be one per row by default, ordered by importance, and use this compact structure: headline, source link, `Signal`, and `Potential impact`.
-6. Use badges such as `High impact`, `Product`, `Research`, `Security`, `Infra`, `Policy`, or custom labels when helpful.
-7. Include a small footer noting that Firsthand AI Digest is the index and access-limited sources may rely on Digest metadata.
+6. Avoid giant walls of text. Story cards should be one per row by default, ordered by importance, and use this compact structure: headline, source link, `Signal`, and `Potential impact`.
+7. Use badges such as `High impact`, `Product`, `Research`, `Security`, `Infra`, `Policy`, or custom labels when helpful.
+8. Include a small footer noting that Firsthand AI Digest is the index and access-limited sources may rely on Digest metadata.
 
 Suggested HTML sections:
 

@@ -10,6 +10,7 @@ This file describes the workflow independently of Codex, Claude Code, OpenClaw, 
 - Output language: English
 - Output style: concise visual daily brief, 3-5 minute read
 - Preferred artifact: self-contained HTML file named `firsthand-ai-digest-brief.html`
+- Preferred template: `templates/brief.html`
 
 ## Required Workflow
 
@@ -18,7 +19,7 @@ This file describes the workflow independently of Codex, Claude Code, OpenClaw, 
 3. Follow only high-value or ambiguous items to original sources. Include blogs, papers, announcements, videos, podcasts, and X posts or threads when they matter for the brief.
 4. Fetch or inspect accessible original content for top stories.
 5. Mark access limitations explicitly.
-6. Write the final brief using `references/automation_prompt.md`, preferably as self-contained HTML.
+6. Write the final brief using `references/automation_prompt.md`, preferably by copying `templates/brief.html` and replacing placeholders.
 
 ## Optional Helper
 
@@ -59,6 +60,6 @@ The final brief must include:
 - Also Noted
 - What To Watch Next
 
-Prefer HTML with visual hierarchy: hero/header, stats row, one-row story cards, badges, compact lists, and clear source links. Top-story cards should use `Source`, `Signal`, and `Potential impact` rather than long prose labels. If HTML output is impossible, use Markdown with rich visual signposts and emoji.
+Prefer HTML with the fixed `templates/brief.html` style: compact header, stats row, TL;DR tiles, one-row story cards, badges, compact lists, and clear source links. Top-story cards should use `Source`, `Signal`, and `Potential impact` rather than long prose labels. If HTML output is impossible, use Markdown with rich visual signposts and emoji.
 
 Target 800-1200 words, hard maximum 1500 words unless the user asks for a deep dive.

@@ -44,6 +44,7 @@ If the agent can clone GitHub repos and write files, it should be able to load t
   - source links
   - signal and potential impact
   - patterns and watchlist
+- Uses a fixed HTML template at `templates/brief.html`, so each daily brief keeps the same visual style
 
 ## Codex / Codex Cloud
 
@@ -101,6 +102,8 @@ This creates a source pack. The source pack is not the final brief; it is the in
 ## Output Style
 
 The preferred output is a single HTML file with no build step and no external dependencies.
+
+The visual style is fixed in `templates/brief.html`. Agents should copy that template and replace the `{{PLACEHOLDER}}` blocks with current content, instead of inventing a new layout each day.
 
 The page should be short, visual, and easy to scan:
 
