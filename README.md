@@ -59,7 +59,7 @@ Create a daily 7 AM automation for Firsthand AI Digest and run today's brief onc
 After import, you can also invoke the skill directly:
 
 ```text
-Use $ai-providence-daily to create the daily 7 AM automation and run today's Firsthand AI Digest HTML brief once.
+Use $firsthand-ai-digest to create the daily 7 AM automation and run today's Firsthand AI Digest HTML brief once.
 ```
 
 Codex will create a daily automation and generate a self-contained HTML brief named:

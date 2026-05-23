@@ -1,5 +1,5 @@
 ---
-name: ai-providence-daily
+name: firsthand-ai-digest
 description: Build and run a daily Firsthand AI Digest workflow for https://ai.prov1dence.top/. Use when the user wants to create a recurring 7 AM automation, run the workflow once, collect the last 24 hours of AI news from Firsthand AI Digest, check high-value original sources when needed, then produce a concise English visual daily brief, preferably as a self-contained HTML page with emoji, cards, badges, links, and a 3-5 minute reading time.
 ---
 
@@ -50,7 +50,7 @@ Add the current workspace directory as the automation working directory when ava
 Run the bundled source collector from the skill directory:
 
 ```bash
-python3 scripts/run_once.py --hours 24 --output ai-providence-source-pack.md
+python3 scripts/run_once.py --hours 24 --output firsthand-ai-digest-source-pack.md
 ```
 
 Useful options:

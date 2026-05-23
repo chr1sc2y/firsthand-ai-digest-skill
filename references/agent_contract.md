@@ -25,7 +25,7 @@ This file describes the workflow independently of Codex, Claude Code, OpenClaw, 
 Run:
 
 ```bash
-python3 scripts/run_once.py --hours 24 --output ai-providence-source-pack.md
+python3 scripts/run_once.py --hours 24 --output firsthand-ai-digest-source-pack.md
 ```
 
 The helper produces a source pack with discovered links and excerpts. It does not replace original-source verification or analysis.

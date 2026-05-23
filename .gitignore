@@ -1,7 +1,6 @@
 *.pyc
 __pycache__/
 .DS_Store
-ai-providence-source-pack.md
 report-source-pack.md
 firsthand-ai-digest-source-pack*.md
 firsthand-ai-digest-brief*.html

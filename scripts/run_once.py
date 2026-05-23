@@ -25,7 +25,7 @@ from pathlib import Path
 
 
 DEFAULT_SITE = "https://ai.prov1dence.top/"
-USER_AGENT = "Mozilla/5.0 (compatible; ai-providence-daily-skill/1.0)"
+USER_AGENT = "Mozilla/5.0 (compatible; firsthand-ai-digest-skill/1.0)"
 SKIP_EXTENSIONS = (
     ".css",
     ".js",
@@ -495,10 +495,10 @@ def format_page(page: PageInfo) -> list[str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Collect ai.prov1dence.top daily report sources.")
+    parser = argparse.ArgumentParser(description="Collect Firsthand AI Digest daily brief sources.")
     parser.add_argument("--site", default=DEFAULT_SITE, help="Firsthand AI Digest index URL")
     parser.add_argument("--hours", type=int, default=24, help="Intended lookback window for the report")
-    parser.add_argument("--output", default="ai-providence-source-pack.md", help="Markdown output path")
+    parser.add_argument("--output", default="firsthand-ai-digest-source-pack.md", help="Markdown output path")
     parser.add_argument("--max-detail-pages", type=int, default=20, help="Maximum same-site detail pages to fetch")
     parser.add_argument("--max-original-sources", type=int, default=80, help="Maximum outbound original sources to fetch")
     parser.add_argument("--max-secondary-sources", type=int, default=10, help="Maximum source links discovered from first-layer sources")

@@ -4,7 +4,7 @@ Use this repository to run a daily Firsthand AI Digest workflow from <https://ai
 
 ## Capabilities
 
-- Run once: execute `python3 scripts/run_once.py --hours 24 --output ai-providence-source-pack.md`, then inspect the source pack and open only the highest-value original sources before writing the final brief.
+- Run once: execute `python3 scripts/run_once.py --hours 24 --output firsthand-ai-digest-source-pack.md`, then inspect the source pack and open only the highest-value original sources before writing the final brief.
 - Schedule daily: if the host agent supports scheduled tasks, create a daily 07:00 task using `references/automation_prompt.md` as the task body.
 - Portable fallback: if native scheduling is unavailable, explain how to run the one-time command and use the prompt in `references/automation_prompt.md` with the user's scheduler or agent runtime.
 
@@ -23,10 +23,10 @@ Use this repository to run a daily Firsthand AI Digest workflow from <https://ai
 ## One-Time Run
 
 ```bash
-python3 scripts/run_once.py --hours 24 --output ai-providence-source-pack.md
+python3 scripts/run_once.py --hours 24 --output firsthand-ai-digest-source-pack.md
 ```
 
-Then read `ai-providence-source-pack.md`, open important source links directly, and write the brief using `references/automation_prompt.md`.
+Then read `firsthand-ai-digest-source-pack.md`, open important source links directly, and write the brief using `references/automation_prompt.md`.
 
 The helper filters Firsthand AI Digest cards by their `data-iso` timestamps before fetching original sources.
 

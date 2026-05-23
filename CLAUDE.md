@@ -8,7 +8,7 @@ When the user asks to use this repo:
 2. For a one-time run, execute:
 
 ```bash
-python3 scripts/run_once.py --hours 24 --output ai-providence-source-pack.md
+python3 scripts/run_once.py --hours 24 --output firsthand-ai-digest-source-pack.md
 ```
 
 3. Read the generated source pack.
