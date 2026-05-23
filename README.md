@@ -6,6 +6,32 @@ It scans the last 24 hours of AI news, picks the most important signals, and ask
 
 ![Firsthand AI Digest preview](assets/preview.png)
 
+## Quick Start: Copy This Link
+
+Give this repository link to your agent:
+
+```text
+https://github.com/chr1sc2y/firsthand-ai-digest-skill
+```
+
+Or, if your agent prefers SSH:
+
+```text
+git@github.com:chr1sc2y/firsthand-ai-digest-skill.git
+```
+
+Then say:
+
+```text
+Import and use this skill/agent pack:
+https://github.com/chr1sc2y/firsthand-ai-digest-skill
+
+Create a daily 7 AM automation for Firsthand AI Digest, and also run it once now.
+The output should be a short visual HTML brief.
+```
+
+If the agent can clone GitHub repos and write files, it should be able to load the instructions from this repo automatically. If it cannot install skills automatically, it can still read `AGENTS.md`, `CLAUDE.md`, or `references/agent_contract.md` and follow the workflow.
+
 ## What It Does
 
 - Collects the latest 24 hours from Firsthand AI Digest
@@ -19,18 +45,21 @@ It scans the last 24 hours of AI news, picks the most important signals, and ask
   - signal and potential impact
   - patterns and watchlist
 
-## Install In Codex
+## Codex / Codex Cloud
 
-Import this GitHub repository as a Skill:
+Paste this into Codex or Codex Cloud:
 
 ```text
-git@github.com:chr1sc2y/firsthand-ai-digest-skill.git
+Import this repository as a Skill and use it:
+https://github.com/chr1sc2y/firsthand-ai-digest-skill
+
+Create a daily 7 AM automation for Firsthand AI Digest and run today's brief once.
 ```
 
-Then ask Codex:
+After import, you can also invoke the skill directly:
 
 ```text
-Use $ai-providence-daily to create the daily 7 AM automation and run today's Firsthand AI Digest brief once.
+Use $ai-providence-daily to create the daily 7 AM automation and run today's Firsthand AI Digest HTML brief once.
 ```
 
 Codex will create a daily automation and generate a self-contained HTML brief named:
@@ -39,7 +68,7 @@ Codex will create a daily automation and generate a self-contained HTML brief na
 firsthand-ai-digest-brief.html
 ```
 
-## Use With Claude Code Or OpenClaw
+## Claude Code / OpenClaw / Other Agents
 
 This repo also includes portable agent instructions:
 
@@ -48,10 +77,13 @@ This repo also includes portable agent instructions:
 - `references/agent_contract.md` for a platform-neutral workflow
 - `references/automation_prompt.md` for the actual brief-generation prompt
 
-Point your agent at this repository and say:
+Paste this into your agent:
 
 ```text
-Follow this repo's instructions and generate today's Firsthand AI Digest HTML brief.
+Use this repo as an agent pack:
+https://github.com/chr1sc2y/firsthand-ai-digest-skill
+
+Read the repo instructions, run the 24-hour Firsthand AI Digest workflow once, and generate the HTML brief.
 ```
 
 If your agent supports scheduled jobs, ask it to schedule the task for every day at 7 AM.
