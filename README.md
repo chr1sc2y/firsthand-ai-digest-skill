@@ -32,49 +32,6 @@ Import this repo as a skill, create a daily 7 AM Firsthand AI Digest automation,
   - patterns and watchlist
 - Uses a fixed HTML template at `templates/brief.html`, so each daily brief keeps the same visual style
 
-## Codex / Codex Cloud
-
-Paste this into Codex or Codex Cloud:
-
-```text
-Import this repository as a Skill and use it:
-https://github.com/chr1sc2y/firsthand-ai-digest-skill
-
-Create a daily 7 AM automation for Firsthand AI Digest and run today's brief once.
-```
-
-After import, you can also invoke the skill directly:
-
-```text
-Use $firsthand-ai-digest to create the daily 7 AM automation and run today's Firsthand AI Digest HTML brief once.
-```
-
-Codex will create a daily automation and generate a self-contained HTML brief named:
-
-```text
-firsthand-ai-digest-brief.html
-```
-
-## Claude Code / OpenClaw / Other Agents
-
-This repo also includes portable agent instructions:
-
-- `AGENTS.md` for general agents
-- `CLAUDE.md` for Claude Code
-- `references/agent_contract.md` for a platform-neutral workflow
-- `references/automation_prompt.md` for the actual brief-generation prompt
-
-Paste this into your agent:
-
-```text
-Use this repo as an agent pack:
-https://github.com/chr1sc2y/firsthand-ai-digest-skill
-
-Read the repo instructions, run the 24-hour Firsthand AI Digest workflow once, and generate the HTML brief.
-```
-
-If your agent supports scheduled jobs, ask it to schedule the task for every day at 7 AM.
-
 ## Run Once Manually
 
 From the repo root:
