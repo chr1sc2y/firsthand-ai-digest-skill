@@ -1,0 +1,4 @@
+interface:
+  display_name: "Firsthand AI Digest"
+  short_description: "Concise visual daily AI briefs"
+  default_prompt: "Use $ai-providence-daily to create the daily 7 AM automation and run today’s 24-hour Firsthand AI Digest HTML brief once."
