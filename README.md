@@ -28,16 +28,6 @@ Import and use https://github.com/chr1sc2y/firsthand-ai-digest-skill to create a
   - patterns and watchlist
 - Uses a fixed HTML template at `templates/brief.html`, so each daily brief keeps the same visual style
 
-## Run Once Manually
-
-From the repo root:
-
-```bash
-python3 scripts/run_once.py --hours 24 --output firsthand-ai-digest-source-pack.md
-```
-
-This creates a source pack. The source pack is not the final brief; it is the input your agent uses to write the final HTML page.
-
 ## Output Style
 
 The preferred output is a single HTML file with no build step and no external dependencies.
@@ -51,7 +41,3 @@ The page should be short, visual, and easy to scan:
 - one-row story cards
 - `Source`, `Signal`, and `Potential impact`
 - low-priority notes at the bottom
-
-## Notes
-
-The script is intentionally lightweight. It does not try to fully crawl X, YouTube, LinkedIn, podcasts, or short-link services because those pages are often slow, login-gated, or anti-bot protected. Instead, it uses Firsthand AI Digest metadata by default and lets the agent open only the most important sources when needed.
