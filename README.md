@@ -6,31 +6,17 @@ It scans the last 24 hours of AI news, picks the most important signals, and ask
 
 ![Firsthand AI Digest preview](assets/preview.png)
 
-## Quick Start: Copy This Link
+## Quick Start
 
-Give this repository link to your agent:
+Copy this repo link into your agent and ask it to import/use the skill:
 
 ```text
 https://github.com/chr1sc2y/firsthand-ai-digest-skill
 ```
 
-Or, if your agent prefers SSH:
-
 ```text
-git@github.com:chr1sc2y/firsthand-ai-digest-skill.git
+Import this repo as a skill, create a daily 7 AM Firsthand AI Digest automation, and run it once now as a short visual HTML brief.
 ```
-
-Then say:
-
-```text
-Import and use this skill/agent pack:
-https://github.com/chr1sc2y/firsthand-ai-digest-skill
-
-Create a daily 7 AM automation for Firsthand AI Digest, and also run it once now.
-The output should be a short visual HTML brief.
-```
-
-If the agent can clone GitHub repos and write files, it should be able to load the instructions from this repo automatically. If it cannot install skills automatically, it can still read `AGENTS.md`, `CLAUDE.md`, or `references/agent_contract.md` and follow the workflow.
 
 ## What It Does
 
