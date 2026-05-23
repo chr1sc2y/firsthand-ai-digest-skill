@@ -8,7 +8,7 @@ It scans the last 24 hours of AI news, picks the most important signals, and ask
 
 ## Quick Start
 
-Just copy this sentence to your agent:
+Just copy this sentence into your agent. It will generate a scheduled task and run it immediately once.
 
 ```text
 Import and use https://github.com/chr1sc2y/firsthand-ai-digest-skill to create a daily 7 AM Firsthand AI Digest automation, and run it once now as a short visual HTML brief.
