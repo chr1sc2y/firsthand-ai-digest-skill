@@ -8,14 +8,10 @@ It scans the last 24 hours of AI news, picks the most important signals, and ask
 
 ## Quick Start
 
-Copy this repo link into your agent and ask it to import/use the skill:
+Just copy this sentence to your agent:
 
 ```text
-https://github.com/chr1sc2y/firsthand-ai-digest-skill
-```
-
-```text
-Import this repo as a skill, create a daily 7 AM Firsthand AI Digest automation, and run it once now as a short visual HTML brief.
+Import and use https://github.com/chr1sc2y/firsthand-ai-digest-skill to create a daily 7 AM Firsthand AI Digest automation, and run it once now as a short visual HTML brief.
 ```
 
 ## What It Does
